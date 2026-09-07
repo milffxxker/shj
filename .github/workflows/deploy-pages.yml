@@ -39,6 +39,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build website
+        env:
+          VITE_BASE_PATH: /shj/
         run: pnpm build
 
       - name: Preserve direct links to project pages
@@ -65,3 +67,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
