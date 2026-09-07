@@ -2,6 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import Iridescence from './Iridescence'
 import BorderGlow from './BorderGlow'
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+const routeHref = (path) => `${basePath}${path}` || '/'
+const routeFromLocation = () => {
+  const pathname = window.location.pathname
+  if (!basePath) return pathname
+  if (pathname === basePath || pathname === `${basePath}/`) return '/'
+  return pathname.startsWith(`${basePath}/`) ? pathname.slice(basePath.length) : pathname
+}
+
 const projects = [
   { slug: 'got-some-coffee', id: '01', title: '整点咖啡 / GOT SOME COFFEE', type: '品牌视觉设计 · VI 系统', image: '/assets/coffee/cup.png', year: '2026' },
   { slug: 'baize', id: '02', title: '白泽 / BAIZE', type: '祥瑞神兽 · IP 形象设计', image: '/assets/baize/cover-complete.png', year: '2026' },
@@ -22,14 +31,14 @@ const awards = [
 function Arrow() { return <span aria-hidden="true" className="arrow">↗</span> }
 
 function useRoute() {
-  const [path, setPath] = useState(window.location.pathname)
+  const [path, setPath] = useState(routeFromLocation)
   useEffect(() => {
-    const onPop = () => setPath(window.location.pathname)
+    const onPop = () => setPath(routeFromLocation())
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
   const navigate = (to) => {
-    window.history.pushState({}, '', to)
+    window.history.pushState({}, '', routeHref(to))
     setPath(to)
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -43,9 +52,9 @@ function Navigation({ detail = false, navigate, scrolled }) {
     setTimeout(() => document.querySelector('#work')?.scrollIntoView(), 20)
   }
   return <nav className={scrolled || detail ? 'nav nav--solid' : 'nav'} aria-label="主导航">
-    <a href="/" onClick={(e) => { e.preventDefault(); navigate('/') }} className="monogram">SHJ<span>®</span></a>
+    <a href={routeHref('/')} onClick={(e) => { e.preventDefault(); navigate('/') }} className="monogram">SHJ<span>®</span></a>
     <div className="nav-links">
-      {detail ? <a href="/#work" onClick={goToWork}>返回目录</a> : <><a href="#about">简介</a><a href="#work">作品</a><a href="#contact">联系</a></>}
+      {detail ? <a href={`${routeHref('/')}#work`} onClick={goToWork}>返回目录</a> : <><a href="#about">简介</a><a href="#work">作品</a><a href="#contact">联系</a></>}
     </div>
     <a className="contact-pill" href="mailto:1035537243@qq.com">联系我 <Arrow /></a>
   </nav>
@@ -56,7 +65,7 @@ function ProjectFooter({ current, navigate }) {
   const next = projects[(index + 1) % projects.length]
   const go = (event, path) => { event.preventDefault(); navigate(path) }
   return <footer className="project-navigation">
-    <a href={`/work/${next.slug}`} onClick={(event) => go(event, `/work/${next.slug}`)} className="project-nav-side project-nav-next">
+    <a href={routeHref(`/work/${next.slug}`)} onClick={(event) => go(event, `/work/${next.slug}`)} className="project-nav-side project-nav-next">
       <span>NEXT PROJECT →</span><strong>{next.title}</strong>
     </a>
   </footer>
@@ -142,7 +151,7 @@ function HomePage({ navigate }) {
         <div className="section-index">02 / WORK INDEX</div>
         <div className="directory-head"><h2>WORK<br /><span>DIRECTORY.</span></h2></div>
         <div className="directory-grid">
-          {projects.map((project) => <a className="directory-card" href={`/work/${project.slug}`} key={project.slug} onClick={(e) => { e.preventDefault(); navigate(`/work/${project.slug}`) }}>
+          {projects.map((project) => <a className="directory-card" href={routeHref(`/work/${project.slug}`)} key={project.slug} onClick={(e) => { e.preventDefault(); navigate(`/work/${project.slug}`) }}>
             <div className={`directory-cover${project.image ? '' : ' directory-cover--empty'}`}>
               {project.image ? <img src={project.image} alt={`${project.title} 作品封面`} loading="lazy" decoding="async" /> : <div className="empty-cover"><span>+</span><p>PROJECT COVER<br />PLACEHOLDER</p></div>}
               <span className="card-id">{project.id}</span><span className="card-open">VIEW PROJECT <Arrow /></span>
@@ -585,10 +594,11 @@ function ProjectPage({ project, navigate }) {
   </main>
 }
 
-function NotFound({ navigate }) { return <main className="not-found"><p>404 / PAGE NOT FOUND</p><h1>页面不存在</h1><a href="/" onClick={(e) => { e.preventDefault(); navigate('/') }}>返回首页 <Arrow /></a></main> }
+function NotFound({ navigate }) { return <main className="not-found"><p>404 / PAGE NOT FOUND</p><h1>页面不存在</h1><a href={routeHref('/')} onClick={(e) => { e.preventDefault(); navigate('/') }}>返回首页 <Arrow /></a></main> }
 
 export default function App() {
   const [path, navigate] = useRoute()
   const match = path.match(/^\/work\/([^/]+)\/?$/)
   return match ? <ProjectPage project={projects.find((p) => p.slug === match[1])} navigate={navigate} /> : <HomePage navigate={navigate} />
 }
+
