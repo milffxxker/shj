@@ -196,23 +196,23 @@ function CoffeeProject({ project, navigate }) {
           <p>“整点咖啡”把下午两三点的片刻休息转化为品牌主张，以轻松、温暖、满足为核心感受，用直率的语言、明亮色彩与拟人角色，邀请人们暂时放下工作，与自己和解。</p>
           <div className="coffee-values"><span>轻松 / RELAX</span><span>温暖 / WARM</span><span>满足 / SATISFY</span></div>
         </div>
-        <img src="/assets/coffee/story.png" alt="整点咖啡品牌故事与核心关键词" />
+      <img src="/assets/coffee/story.png" alt="整点咖啡品牌故事与核心关键词" loading="lazy" decoding="async" />
       </div>
     </section>
 
     <section className="coffee-page coffee-poster-page">
       <div className="coffee-page-count">03 / 08</div>
       <div className="shell coffee-section-head"><p>POSTER SYSTEM / 核心海报</p><h2>准点开业，<br />欢迎你来。</h2></div>
-      <img className="coffee-poster-set" src="/assets/coffee/poster-set.png" alt="整点咖啡蓝色、橙色与红色系列开业海报" />
+      <img className="coffee-poster-set" src="/assets/coffee/poster-set.png" alt="整点咖啡蓝色、橙色与红色系列开业海报" loading="lazy" decoding="async" />
     </section>
 
     <section className="coffee-page coffee-editorial-page">
       <div className="coffee-page-count dark">04 / 08</div>
       <div className="shell coffee-editorial">
         <div className="coffee-section-head dark"><p>POSTER IN CONTEXT / 海报场景</p><h2>同一视觉语言，<br />进入不同日常。</h2></div>
-        <img className="poster-wall" src="/assets/coffee/poster-wall.png" alt="街头墙面上的整点咖啡开业海报" />
-        <img className="poster-shadow" src="/assets/coffee/poster-shadow.png" alt="光影墙面上的整点咖啡系列海报" />
-        <img className="poster-frame" src="/assets/coffee/poster-frame.png" alt="室内空间中的整点咖啡可颂海报" />
+        <img className="poster-wall" src="/assets/coffee/poster-wall.png" alt="街头墙面上的整点咖啡开业海报" loading="lazy" decoding="async" />
+        <img className="poster-shadow" src="/assets/coffee/poster-shadow.png" alt="光影墙面上的整点咖啡系列海报" loading="lazy" decoding="async" />
+        <img className="poster-frame" src="/assets/coffee/poster-frame.png" alt="室内空间中的整点咖啡可颂海报" loading="lazy" decoding="async" />
       </div>
     </section>
 
@@ -220,26 +220,26 @@ function CoffeeProject({ project, navigate }) {
       <div className="coffee-page-count dark">05 / 08</div>
       <div className="shell coffee-system-grid">
         <div className="coffee-section-head dark"><p>DESIGN ELEMENTS / 设计元素</p><h2>一只落在杯沿上的鸟，<br />成为品牌记忆。</h2><span>角色图形以蓝色线条、暖黄色点缀与杯形结构组成；不同组合适配招牌、包装和传播物料。</span></div>
-        <div className="logo-board"><img src="/assets/coffee/logo-system.png" alt="整点咖啡角色标志标准制图与组合形式" /></div>
+        <div className="logo-board"><img src="/assets/coffee/logo-system.png" alt="整点咖啡角色标志标准制图与组合形式" loading="lazy" decoding="async" /></div>
       </div>
     </section>
 
     <section className="coffee-page coffee-products-page">
       <div className="coffee-page-count">06 / 08</div>
       <div className="shell coffee-section-head"><p>PACKAGING & PAPER / 包装与纸品</p><h2>从一口点心，<br />到一次递交。</h2></div>
-      <div className="shell product-duo"><figure><img src="/assets/coffee/pastry.png" alt="整点咖啡可颂食品包装" /><figcaption>PASTRY PACKAGING / 食品包装</figcaption></figure><figure><img src="/assets/coffee/stationery.png" alt="整点咖啡信封与卡片设计" /><figcaption>STATIONERY / 品牌纸品</figcaption></figure></div>
+      <div className="shell product-duo"><figure><img src="/assets/coffee/pastry.png" alt="整点咖啡可颂食品包装" loading="lazy" decoding="async" /><figcaption>PASTRY PACKAGING / 食品包装</figcaption></figure><figure><img src="/assets/coffee/stationery.png" alt="整点咖啡信封与卡片设计" loading="lazy" decoding="async" /><figcaption>STATIONERY / 品牌纸品</figcaption></figure></div>
     </section>
 
     <section className="coffee-page coffee-kit-page">
       <div className="coffee-page-count dark">07 / 08</div>
       <div className="shell coffee-section-head dark"><p>STAFF KIT / 员工物料</p><h2>让品牌被穿戴，<br />也被记住。</h2></div>
-      <div className="shell kit-grid"><figure className="kit-lanyard"><img src="/assets/coffee/lanyard.png" alt="整点咖啡员工工牌与挂绳" /></figure><figure><img src="/assets/coffee/apron.png" alt="整点咖啡员工围裙" /></figure><figure><img src="/assets/coffee/cards.png" alt="整点咖啡品牌名片" /></figure></div>
+      <div className="shell kit-grid"><figure className="kit-lanyard"><img src="/assets/coffee/lanyard.png" alt="整点咖啡员工工牌与挂绳" loading="lazy" decoding="async" /></figure><figure><img src="/assets/coffee/apron.png" alt="整点咖啡员工围裙" loading="lazy" decoding="async" /></figure><figure><img src="/assets/coffee/cards.png" alt="整点咖啡品牌名片" loading="lazy" decoding="async" /></figure></div>
     </section>
 
     <section className="coffee-page coffee-finale">
       <div className="coffee-page-count">08 / 08</div>
       <div className="shell coffee-section-head"><p>IN THE REAL WORLD / 实物与空间</p><h2>品牌最终落在<br />每一次相遇里。</h2></div>
-      <div className="shell finale-grid"><figure className="finale-chairs"><img src="/assets/coffee/chairs.png" alt="整点咖啡品牌户外座椅" /><figcaption>OUTDOOR SEATING / 户外座椅</figcaption></figure><figure className="finale-cup"><img src="/assets/coffee/cup.png" alt="整点咖啡品牌咖啡杯" /><figcaption>COFFEE CUP / 咖啡杯</figcaption></figure><figure className="finale-sign"><img src="/assets/coffee/sign.png" alt="整点咖啡门店灯箱招牌" /><figcaption>STORE SIGN / 门店灯箱</figcaption></figure></div>
+      <div className="shell finale-grid"><figure className="finale-chairs"><img src="/assets/coffee/chairs.png" alt="整点咖啡品牌户外座椅" loading="lazy" decoding="async" /><figcaption>OUTDOOR SEATING / 户外座椅</figcaption></figure><figure className="finale-cup"><img src="/assets/coffee/cup.png" alt="整点咖啡品牌咖啡杯" loading="lazy" decoding="async" /><figcaption>COFFEE CUP / 咖啡杯</figcaption></figure><figure className="finale-sign"><img src="/assets/coffee/sign.png" alt="整点咖啡门店灯箱招牌" loading="lazy" decoding="async" /><figcaption>STORE SIGN / 门店灯箱</figcaption></figure></div>
     </section>
     <ProjectFooter current={project} navigate={navigate} />
   </main>
