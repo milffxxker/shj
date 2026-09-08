@@ -40,7 +40,7 @@ jobs:
 
       - name: Build website
         env:
-          VITE_BASE_PATH: /
+          # Project Pages is hosted below /shj/, so generated URLs include the repository prefix.\n          VITE_BASE_PATH: /shj/
         run: pnpm build
 
       - name: Preserve direct links to project pages
