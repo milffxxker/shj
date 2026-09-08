@@ -150,7 +150,7 @@
 }
 
 /* Chao Qi Dan Feng Hua — animation and cultural IP case study */
-.directory-card[href="/work/beihai-animation"] .directory-cover img{object-position:center 38%}
+.directory-card[href$="/work/beihai-animation"] .directory-cover img{object-position:center 38%}
 .beihai-project{--bh-blue:#2e8ff3;--bh-deep:#092c5c;--bh-sky:#83d4f5;--bh-pink:#f5b4d9;--bh-coral:#f05a63;--bh-paper:#f5f8fb;background:#f5f8fb;color:#102947}
 .beihai-page{min-height:100vh;position:relative;overflow:hidden;padding:120px 0}
 .beihai-page-count{position:absolute;z-index:5;right:40px;top:98px;color:rgba(255,255,255,.72);font-size:9px;letter-spacing:.18em}.beihai-page-count.dark{color:#63798e}
