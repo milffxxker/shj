@@ -40,7 +40,7 @@ jobs:
 
       - name: Build website
         env:
-          VITE_BASE_PATH: /shj/
+          VITE_BASE_PATH: /
         run: pnpm build
 
       - name: Preserve direct links to project pages
